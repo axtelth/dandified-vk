@@ -1,0 +1,331 @@
+/* --------------------------------------------------
+Шрифт
+-------------------------------------------------- */
+* {
+  font-family: Segoe UI Variable !important;
+}
+
+/* --------------------------------------------------
+Цвета
+-------------------------------------------------- */
+:root {
+  --gray_900: #171717 !important;
+  --gray_850: #171717 !important;
+}
+
+[dir] body {
+  background: var(--gray_900) !important;
+}
+
+/* --------------------------------------------------
+Сворачивание списка чатов до аватарок если ширина
+экрана меньше 900 
+-------------------------------------------------- */
+@media only screen and (max-width: 900px) {
+  .nim-dialog--content {
+    visibility: hidden
+  }
+
+  .im-create,
+  .im-page--dialogs._im_page_dialogs.page_block,
+  #im_dialogs {
+    transition: .3s;
+    width: 76px !important;
+  }
+
+  [dir="ltr"] .im-page .im-page--history {
+    margin-left: 76px !important;
+  }
+
+  .im-page--dialogs-search .ui_search_input_block {
+    transition: .1s;
+    visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .nim-dialog--content {
+    visibility: visible;
+  }
+
+  .im-create,
+  .im-page--dialogs._im_page_dialogs.page_block,
+  #im_dialogs {
+    transition: .3s;
+    width: 316px !important;
+  }
+
+  [dir="ltr"] .im-page .im-page--history {
+    margin-left: 316px !important;
+  }
+
+  .im-page--dialogs-search .ui_search_input_block {
+    transition: .1s;
+    visibility: visible;
+  }
+}
+
+/* --------------------------------------------------
+Скрытие лого вк
+-------------------------------------------------- */
+.HeaderNav__item.HeaderNav__item--logo {
+  display: none !important;
+}
+
+/* --------------------------------------------------
+Скрытие поиска
+-------------------------------------------------- */
+.HeaderNav__item.HeaderNav__item--gap {
+  display: none !important;
+}
+
+/* --------------------------------------------------
+Фикс хедера
+-------------------------------------------------- */
+#page_header_wrap {
+  width: auto !important;
+}
+
+[dir] #page_header {
+  padding: 0 0 !important;
+}
+
+/* --------------------------------------------------
+Небольшая анимация активации поля ввода в диалоге
+-------------------------------------------------- */
+[dir] .im-chat-input .im-chat-input--text {
+  border-bottom: solid 1px var(--input_border) !important;
+  padding-bottom: 10px !important
+}
+
+[dir] .im-chat-input .im-chat-input--text:focus {
+  border-bottom: solid 2px var(--accent) !important;
+  padding-bottom: 9px !important
+}
+
+.im-chat-input--txt-wrap {
+  border-bottom: 0px!important;
+}
+
+/* --------------------------------------------------
+Скругления у фотографий и вложений в чатах
+-------------------------------------------------- */
+[dir] .page_gif_large .page_doc_photo,
+.page_post_thumb_last_column,
+.pages_gif_img.page_gif_big,
+.page_post_thumb_wrap.image_cover.page_post_thumb_last_row.fl_l.page_post_thumb_not_single {
+  border-radius: 6px !important;
+}
+
+/* --------------------------------------------------
+Скрытие сайдбара и увеличение основной коробки вк
+-------------------------------------------------- */
+body.new_header_design #side_bar .left_label,
+[dir="ltr"] body.new_header_design #ads_left.ads_left_empty + .left_menu_nav_wrap,
+#side_bar ol,
+#side_bar,
+[dir="ltr"] .body_im .side_bar {
+  display: none !important;
+}
+
+[dir] #page_layout {
+  padding: 0 0 !important;
+}
+
+[dir] .im-page {
+  padding: 0 0 !important;
+  position: fixed !important;
+}
+
+[dir] #page_body,
+#page_layout,
+#page_header,
+.scroll_fix {
+  width: 100% !important;
+}
+
+.im-page.js-im-page {
+  height: calc(100% - var(--header-height)) !important;
+}
+
+/* --------------------------------------------------
+Расширение контейнера с чатом
+-------------------------------------------------- */
+.im-page--chat-body-abs._im_chat_body_abs.ui_scroll_container.ui_scroll_default_theme.ui_scroll_hidden {
+  width: 100% !important; 
+}
+
+/* --------------------------------------------------
+Скрывает сообщение если чат не выбран
+-------------------------------------------------- */
+.im-page .im-page--history_empty.im-page--history .im-page--center-empty {
+  display: none !important;
+}
+
+/* --------------------------------------------------
+Убирает расстояние между списком чатов и текущим чатом 
+-------------------------------------------------- */
+[dir="ltr"] .im-page .im-page--history {
+  transition: .3s;
+  margin-left: 316px;
+}
+
+/* --------------------------------------------------
+Убирает возможность выделять что то в там где не надо
+-------------------------------------------------- */
+img,
+input#im_dialogs_search,
+._im_dialog_title,
+.nim-dialog--name,
+a.im-page--dialogs-filter,
+.im-mess-stack--pname,
+a._im_mess_link,
+.im-page--title,
+.im-page-pinned._im_pinned_message,
+.nim-dialog--unread._im_dialog_unread_ct,
+a.im-page-pinned--name,
+a.im-page--title-main-inner._im_page_peer_name {
+    user-select: none;
+}
+
+::selection {
+  background: #404040;
+}
+
+/* --------------------------------------------------
+Твик для расширения поля ввода в диалогах до ширины диалога
+-------------------------------------------------- */
+[dir="ltr"] .im-chat-input .im-chat-input--textarea {
+  margin: 0 auto 0 auto !important;
+}
+
+[dir="ltr"] .im-chat-input .im-chat-input--textarea {
+  float: none !important;
+}
+
+/* --------------------------------------------------
+Фикс ссылки на страницу в хедере
+-------------------------------------------------- */
+[dir="ltr"] .TopNavBtn__profileLink {
+  padding-left: 10px !important;
+  padding-right: 20px !important;
+}
+
+/* --------------------------------------------------
+фикс меню с вложениями
+-------------------------------------------------- */
+[dir="ltr"] .im-chat-input .im-chat-input--selector .ms_items_more_helper {
+  margin-right: -45px !important;
+}
+
+[dir] .ms_items_more_wrap.to_up .ms_items_more::before,
+[dir] .ms_items_more_wrap.to_up .ms_items_more::after {
+  display: none !important;
+}
+
+/* --------------------------------------------------
+Анимация элементов в различных менюшках
+-------------------------------------------------- */
+.ms_item,
+._im_search_more_action,
+.ui_actions_menu_item {
+  transition: .1s !important;
+}
+
+/* --------------------------------------------------
+Компактный закреп
+-------------------------------------------------- */
+.im-page--pinned._im_pinned {
+  margin-left: auto !important;
+  margin-right: 10px !important;
+  width: 502px !important;
+}
+
+.im-page-pinned._im_pinned_message {
+  border: solid 1px var(--separator_alternate) !important;
+  border-top: 0 !important;
+  border-bottom-left-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
+  height: 35px !important;
+}
+
+.im-page--chat-header-in,
+.im-page--chat-header {
+  position: absolute !important;
+}
+
+/* --------------------------------------------------
+Компактный хедер чата
+-------------------------------------------------- */
+[dir="ltr"] .im-page--toolsw {
+  margin-right: 10px !important;
+  margin-top: 10px !important;
+  margin-left: auto !important;
+  max-width: 500px !important;
+  border: solid 1px var(--separator_alternate) !important;
+  border-top-left-radius: 6px !important;
+  border-top-right-radius: 6px !important;
+  position: relative !important;
+}
+
+.im-page--toolsw {
+  height: 50px !important;
+}
+
+.im-page--chat-header.im-page--chat-header_pinned {
+  height: 0px !important;
+}
+
+/* --------------------------------------------------
+Компактное число в диалогах
+-------------------------------------------------- */
+.im-page .im-page--top-date-bar-wrap {
+  position: absolute !important;
+  width: 100px !important;
+  pointer-events: none !important;
+  margin-right: 10px !important;
+  margin-left: auto !important;
+  margin-top: 8px !important;
+  right: 0px !important;
+}
+
+[dir] .im-page .im-page--top-date-bar {
+  background: var(--background_content) !important;
+  border: 1px solid var(--separator_alternate) !important;
+  box-shadow: 0 1px 3px 0 var(--black_alpha12) !important;
+  padding: 3px 15px !important;
+  border-radius: 6px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-top: 0 !important;
+}
+
+/* --------------------------------------------------
+Скрытие быстрых чатов
+-------------------------------------------------- */
+#fastchat-reforged {
+  display: none !important;
+}
+
+/* --------------------------------------------------
+Фикс медиа ссылок
+-------------------------------------------------- */
+.im_msg_media.im_msg_media_link {
+  max-width: 400px !important;
+}
+
+/* --------------------------------------------------
+Скрытие скроллбара
+-------------------------------------------------- */
+.ui_scroll_bar_container {
+  width: 0 !important;
+  display: none !important;
+}
+
+/* --------------------------------------------------
+Белая оконтовка для некоторых стикеров
+-------------------------------------------------- */
+.sticker_img.im_gift,
+.emoji_sticker_image {
+  filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white) drop-shadow(-1px 1px 0 white) drop-shadow(1px -1px 0 white);
+}
